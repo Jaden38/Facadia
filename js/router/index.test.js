@@ -20,12 +20,14 @@ describe('Unit Test for router', () => {
         await router();
         expect(getByTestId(document.body, 'home-sensors-title')).toHaveTextContent('Vos capteurs');
     });
+
     it('Go to #/facade-details should render the page with the title “Détails du capteur” ', async () => {
         document.location = '#/facade-details';
         document.body.innerHTML = '<div id="root"></div>';
         await router();
         expect(getByTestId(document.body, 'sensor-detail-title')).toHaveTextContent('Détails du capteur');
     });
+    
     it('Go to /#/add-sensor should render the page with the title  “Ajout d’un nouveau capteur”', async () => {
         document.location = '/#/add-sensor';
         document.body.innerHTML = '<div id="root"></div>';
